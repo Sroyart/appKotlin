@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppKotlin">
         <activity
+            android:name=".Home"
+            android:label="myHome"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
