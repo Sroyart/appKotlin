@@ -10,9 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppKotlin">
         <activity
-            android:name=".Home"
-            android:label="myHome"
+            android:name=".Menu"
             android:exported="false" />
+        <activity
+            android:name=".Search"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false"
+            android:label="myHome" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
