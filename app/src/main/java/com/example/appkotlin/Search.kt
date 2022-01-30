@@ -2,6 +2,7 @@ package com.example.appkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -43,6 +44,13 @@ class Search : AppCompatActivity() {
             val data = Data(imageId[i],heading[i])
             newArrayList.add(data)
         }
-        newRecyclerview.adapter = MyAdapter(newArrayList)
+
+        var adapter = MyAdapter(newArrayList)
+        newRecyclerview.adapter = adapter
+        adapter.setOnItemClickListener(object : MyAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                Toast.makeText(this@Search, "Cliked on item $position",Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }
