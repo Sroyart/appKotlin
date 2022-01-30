@@ -1,5 +1,6 @@
 package com.example.appkotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -12,6 +13,7 @@ class Search : AppCompatActivity() {
     private lateinit var newArrayList : ArrayList<Data>
     lateinit var imageId : Array<Int>
     lateinit var heading : Array<String>
+    lateinit var products : Array<String>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +31,13 @@ class Search : AppCompatActivity() {
             "exemple a",
             "exemple b",
             "exemple c"
+        )
+
+        products = arrayOf(
+            getString(R.string.product_a),
+            getString(R.string.product_b),
+            getString(R.string.product_c)
+
         )
 
         newRecyclerview = findViewById(R.id.recyclerview)
@@ -49,7 +58,11 @@ class Search : AppCompatActivity() {
         newRecyclerview.adapter = adapter
         adapter.setOnItemClickListener(object : MyAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@Search, "Cliked on item $position",Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@Search,ProductDetail::class.java)
+                intent.putExtra("heading",newArrayList[position].heading)
+                intent.putExtra("imageId", newArrayList[position].titleImage)
+                intent.putExtra("products",products[position])
+                startActivity(intent)
             }
         })
     }
