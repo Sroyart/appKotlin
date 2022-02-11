@@ -14,18 +14,17 @@ class MyAdapter(private val newsList : ArrayList<Data>) :
 
     interface onItemClickListener{
 
-        fun onItemClick(position: Int)
+        fun onItemClick(position : Int)
     }
 
-    fun setOnItemClickListener(listener: onItemClickListener) {
+    fun setOnItemClickListener(listener: onItemClickListener){
 
         mListener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item,parent,false)
-
-        return MyViewHolder(itemView,mListener)
+        return MyViewHolder(itemView, mListener)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -44,7 +43,6 @@ class MyAdapter(private val newsList : ArrayList<Data>) :
         val tvHeading : TextView = itemView.findViewById(R.id.tvHeading)
 
         init {
-
             itemView.setOnClickListener {
                 listener.onItemClick(adapterPosition)
             }

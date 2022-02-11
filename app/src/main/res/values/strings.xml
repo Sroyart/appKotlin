@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">appKotlin</string>
+
+    <string name="product_a">Product a</string>
+    <string name="product_b">Produit b</string>
+    <string name="product_c">Produit c</string>
 </resources>
