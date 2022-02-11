@@ -13,10 +13,12 @@ class MyAdapter(private val newsList : ArrayList<Data>) :
     private lateinit var mListener: onItemClickListener
 
     interface onItemClickListener{
+
         fun onItemClick(position : Int)
     }
 
     fun setOnItemClickListener(listener: onItemClickListener){
+
         mListener = listener
     }
 

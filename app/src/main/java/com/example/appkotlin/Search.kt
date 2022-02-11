@@ -89,13 +89,11 @@ class Search : AppCompatActivity() {
 
         return super.onCreateOptionsMenu(menu)
     }
-
     private fun getUserData() {
         for (i in imageId.indices) {
             val data = Data(imageId[i],heading[i])
             newArrayList.add(data)
         }
-
         tempArrayList.addAll(newArrayList)
 
         var adapter = MyAdapter(tempArrayList)
